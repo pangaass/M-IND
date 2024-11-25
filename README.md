@@ -73,10 +73,10 @@ bash script/stage2.sh
 
 bash script/stage3.sh
 
-# get best eval step and edit "lora_ckpt_path" , "text_proj_ckpt_path" and "graph_proj_ckpt_path" configs/llama3/title_eval.json
+# get best eval step and edit "lora_ckpt_path" , "text_proj_ckpt_path" and "graph_proj_ckpt_path" configs/llama3/eval.json
 
 #eval 
-bash script/reproduce.sh
+bash script/eval.sh
 
 ```
 
