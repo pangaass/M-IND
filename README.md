@@ -7,7 +7,7 @@ This project leverages a multi-modal structural-enhanced language model for effe
 <p align="center">
 📃 <a href="需要补充arxiv地址" target="_blank"> Paper </a> 
 🤖 <a href="https://www.modelscope.cn/models/canalpang/MIND-lora" target="_blank"> Model Parameters </a> 
-💻 <a href="https://github.com/pangaass/MIND" target="_blank"> GitHub </a>
+💻 <a href="https://github.com/pangaass/M-IND" target="_blank"> GitHub </a>
 </p>
 
 ## 🚀 Quick Start
@@ -63,20 +63,21 @@ change the path of all the config file( in ./configs/llama3/* ):
 
 
 ```bash
-bash script/llama3/run_title.sh
+bash script/stage1.sh
 
 # get best eval epoch and edit "lora_ckpt_path" configs/llama3/stage2.json
 
-bash script/llama3/run_title_textemb.sh
+bash script/stage2.sh
 
 # get best eval step and edit "lora_ckpt _path" and "text_proj_ckpt_path" configs/llama3/stage3.json
 
-bash script/llama3/run_title_graphemb.sh
+bash script/stage3.sh
 
 # get best eval step and edit "lora_ckpt_path" , "text_proj_ckpt_path" and "graph_proj_ckpt_path" configs/llama3/title_eval.json
 
 #eval 
-bash script/llama3/run_inf.sh
+bash script/reproduce.sh
+
 ```
 
 ## Citation
