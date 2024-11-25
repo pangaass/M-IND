@@ -59,7 +59,8 @@ Config
 change the path of all the config file( in ./configs/llama3/* ):
 - ptm_model_path : path to roberta model
 - model_name_or_path : path to Meta-Llama-3-8B
-- ouput_dir : path to save the output
+- stage1.sh : add your wandb API key
+
 
 ```bash
 bash script/llama3/run_title.sh
