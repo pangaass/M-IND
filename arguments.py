@@ -8,7 +8,7 @@ class ModelArguments:
     """
 
     model_name_or_path: str = field(
-        default = "/workspace/pangyunhe/models/LLM-Research/Meta-Llama-3-8B",
+        default = "LLM-Research/Meta-Llama-3-8B",
         metadata={"help": "Path to pretrained model or model identifier from huggingface.co/models"}
     )
     #str or list
@@ -116,10 +116,10 @@ class ModelArguments:
         }
     )
     qformer_model_path:Optional[str] = field(
-        default = "/workspace/pangyunhe/models/bert"
+        default = "models/bert"
     )
     ptm_model_path:Optional[str] = field(
-        default = "/workspace/pangyunhe/models/roberta"
+        default = "models/roberta"
     )
     input_type:Optional[str] = field(
         default = "text",
@@ -482,7 +482,7 @@ class GLMTrainingArguments(TrainingArguments):
     )
     
     eval_ground_truth:str=field(
-        default = "/workspace/pangyunhe/project/IND-WhoIsWho/ind_valid_author_ground_truth.json"
+        default = "data/IND-WhoIsWho/ind_valid_author_ground_truth.json"
     )
     
     eval_delay: Optional[float] = field(

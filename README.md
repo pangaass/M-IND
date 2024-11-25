@@ -33,8 +33,11 @@ pip install -r requirements.txt
 mkdir data
 wget --directory-prefix data https://open-data-set.oss-cn-beijing.aliyuncs.com/oag-benchmark/kddcup-2024/IND-WhoIsWho/IND-WhoIsWho.zip
 wget --directory-prefix data https://open-data-set.oss-cn-beijing.aliyuncs.com/oag-benchmark/kddcup-2024/IND-WhoIsWho/IND-test-public.zip
+wget --directory-prefix data https://open-data-set.oss-cn-beijing.aliyuncs.com/oag-benchmark/kddcup-2024/IND-WhoIsWho/IND-WhoIsWho-valid.zip
+
 unzip data/IND-WhoIsWho.zip -d data
 unzip data/IND-test-public.zip -d data
+unzip data/IND-WhoIsWho-valid.zip -d data
 ```
 
 ### Required Models and Parameters
@@ -48,9 +51,10 @@ download node embeddings of GCCAD from [here](https://pan.baidu.com/s/1T9fR1dWUd
 ### Reproduce from checkpoint
 
 ```bash 
-bash script/reproduce.sh
+# Firstly edit model_name_or_path and ptm_model_path from configs/reproduce.json 
+bash script/reproduce.sh 
 
-python auc.py --target output/predict/predict_res.json --src data/IND-test-public/ind_valid_author_ground_truth.json
+python data/IND-WhoIsWho-valid/eval_valid_ind.py  -hp output/predict/predict_res.json -rf data/IND-WhoIsWho-valid/ind_valid_author_ground_truth.json -l result.log
 ```
 
 ### Train & Evaluate

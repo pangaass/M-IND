@@ -1,8 +1,9 @@
 {
-    "model_name_or_path": "/workspace/pangyunhe/models/LLM-Research/Meta-Llama-3-8B",
-    "author_data": "/workspace/pangyunhe/dataset/IND-WhoIsWho/train_author.json",
-    "pub_data": "/workspace/pangyunhe/dataset/IND-WhoIsWho/pid_to_info_all.json",
-    "eval_data": "/workspace/pangyunhe/dataset/IND-WhoIsWho/ind_valid_author.json",
+    "model_name_or_path":"LLM-Research/Meta-Llama-3-8B",
+    "ptm_model_path":"roberta",
+    "author_data":"data/IND-WhoIsWho/train_author.json",
+    "pub_data":"data/IND-WhoIsWho/pid_to_info_all.json",
+    "eval_data":"data/IND-WhoIsWho/ind_valid_author.json",
     "output_dir": "output/llama3/stage2",
     "run_name": "stage2",
     "preprocessing_num_workers": 20,

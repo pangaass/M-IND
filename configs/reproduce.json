@@ -1,10 +1,13 @@
 {
-    "model_name_or_path":"/workspace/pangyunhe/models/LLM-Research/Meta-Llama-3-8B",
-    "author_data":"/workspace/pangyunhe/dataset/IND-WhoIsWho/train_author.json",
-    "pub_data":"/workspace/pangyunhe/dataset/IND-WhoIsWho/pid_to_info_all.json",
-    "eval_data":"/workspace/pangyunhe/dataset/IND-WhoIsWho/ind_valid_author.json",
+    "model_name_or_path":"LLM-Research/Meta-Llama-3-8B",
+    "ptm_model_path":"roberta",
+    "author_data":"data/IND-WhoIsWho/train_author.json",
+    "pub_data":"data/IND-WhoIsWho/pid_to_info_all.json",
+    "eval_data":"data/IND-WhoIsWho/ind_valid_author.json",
+    "graph_path":"./node_embeddings_for_test.pkl",
+
     "output_dir":"output/predict",
-    "run_name":"last_train_lora",
+    "run_name":"predict",
     "preprocessing_num_workers": 20,
     "lora_rank":8,
     "lora_alpha":16,
@@ -14,7 +17,7 @@
     "lora_ckpt_path":"params/MIND-lora",
 
     "use_emb":true,
-    "text_proj_ckpt_path": "params/MIND-lora/semantic_proj.bin",
+    "text_proj_ckpt_path": "params/MIND-lora/semantic_model.bin",
     "text_feature":"author_org_venue",
     "enable_text_proj_requires_grad":false,
     "text_proj":"linear",
