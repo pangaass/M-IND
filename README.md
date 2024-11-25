@@ -21,7 +21,7 @@ conda create -n mind python==3.10
 conda activate mind
 
 # Navigate to the current directory
-cd ./MIND
+cd ./M-IND
 
 # Install required packages
 pip install -r requirements.txt
