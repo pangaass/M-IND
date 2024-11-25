@@ -24,6 +24,7 @@ lfs/
 script/predict.sh
 script/test.sh
 script/title_textemb.sh
+script/test1.sh
 
 # C extensions
 *.so
