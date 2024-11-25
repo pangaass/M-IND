@@ -6,7 +6,7 @@ This project leverages a multi-modal structural-enhanced language model for effe
 
 <p align="center">
 📃 <a href="需要补充arxiv地址" target="_blank"> Paper </a> 
-🤖 <a href="https://www.modelscope.cn/models/canalpang/MIND-lora" target="_blank"> ModelScope </a> 
+🤖 <a href="https://www.modelscope.cn/models/canalpang/MIND-lora" target="_blank"> Model Parameters </a> 
 💻 <a href="https://github.com/pangaass/MIND" target="_blank"> GitHub </a>
 </p>
 
@@ -41,37 +41,42 @@ unzip data/IND-test-public.zip -d data
 
 download Meta-Llama-3-8B and roberta model from [huggingface](https://huggingface.co/models) or [modelscope](https://www.modelscope.cn/models) 
 
-download node embeddings of GCCAD from [here](https://pan.baidu.com/s/1T9fR1dWUdMmf81RHc38dlA?pwd=uqy6) 
+download and trained checkpoints to params/ from [modelscope](https://www.modelscope.cn/models/canalpang/MIND-lora/summary)
 
-### Config 
+download node embeddings of GCCAD from [here](https://pan.baidu.com/s/1T9fR1dWUdMmf81RHc38dlA?pwd=uqy6)
 
+### Reproduce from checkpoint
+
+```bash 
+bash script/reproduce.sh
+
+python auc.py --target output/predict/predict_res.json --src data/IND-test-public/ind_valid_author_ground_truth.json
+```
+
+### Train & Evaluate
+
+Config  
 change the path of all the config file( in ./configs/llama3/* ):
 - ptm_model_path : path to roberta model
 - model_name_or_path : path to Meta-Llama-3-8B
 - ouput_dir : path to save the output
 
-### Train & Evaluate
 ```bash
 bash script/llama3/run_title.sh
 
-# get best eval epoch and edit "lora_ckpt_path" configs/llama3/title_textemb.json
+# get best eval epoch and edit "lora_ckpt_path" configs/llama3/stage2.json
 
 bash script/llama3/run_title_textemb.sh
 
-# get best eval step and edit "lora_ckpt _path" and "text_proj_ckpt_path" configs/llama3/title_graphemb.json
+# get best eval step and edit "lora_ckpt _path" and "text_proj_ckpt_path" configs/llama3/stage3.json
 
 bash script/llama3/run_title_graphemb.sh
 
-# get best eval step and edit "lora_ckpt _path" , "text_proj_ckpt_path" and "graph_proj_ckpt_path" configs/llama3/title_eval.json
+# get best eval step and edit "lora_ckpt_path" , "text_proj_ckpt_path" and "graph_proj_ckpt_path" configs/llama3/title_eval.json
 
 #eval 
 bash script/llama3/run_inf.sh
 ```
-
-### Notice
-- We use chunkllama to extend the max context of llama3-8b, please clone [chunkllama](https://github.com/HKUNLP/ChunkLlama) to the root of this repo. (Currently Meta has release the llama3.1 version which support long context, we can simply replace current model with 3.1 version)
-- Trained ckpt of 3 stage process are coming soon
-
 
 ## Citation
 ```
