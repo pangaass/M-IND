@@ -23,7 +23,7 @@
     "text_feature": "all",
     "use_graph": true,
     "enable_graph_proj_requires_grad": true,
-    "num_train_epochs": 10,
+    "num_train_epochs": 2,
     "warmup_ratio": 0,
     "lr_scheduler_type": "constant",
     "learning_rate": 5e-5,
@@ -31,8 +31,8 @@
     "use_chat_template": false,
     "bf16": true,
     "seed": 42,
-    "save_steps": 20,
-    "eval_steps": 20,
+    "save_steps": 10,
+    "eval_steps": 10,
     "save_only_model": true,
     "deepspeed": "configs/ds_zero_1.json"
 }
