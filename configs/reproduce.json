@@ -34,7 +34,6 @@
     "per_device_eval_batch_size":1,
     "gradient_accumulation_steps":16,
     "warmup_ratio":0,
-    "num_train_epochs":4,
     "lr_scheduler_type": "constant",
     "bf16":true,
     "deepspeed":"configs/ds_zero_1.json"
